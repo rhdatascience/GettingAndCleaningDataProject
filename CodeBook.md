@@ -1,5 +1,4 @@
-DataScience - Getting and Cleaning Data - Project - CodeBook
-===
+Project - CodeBook
 
 More info about the data being read can be obtained from the files README.txt and features_info.txt in the data folder.
 
@@ -12,6 +11,7 @@ subjectMerged - A 10299 x 1 data frame obtained by row binding the data from sub
 yMerged - A 10299 x 1 data frame obtained by row binding the data from y_train.txt and y_test.txt. This contains the activity class as a numeric.
 
 XMerged - A 10299 x 561 data frame obtained by row binding the data from X_train.txt and X_test.txt
+
 oneDataSet - A 10299 x 563 data frame obtained by column binding subjectMerged, yMerged and XMerged.
 
 ## Project part 2
@@ -53,7 +53,7 @@ tidy - A 180 x 68 data frame containing the average of each variable for each ac
 * Column 2 has the activity.
 * Columns 3:68 contain the average of all the value for the corresponding subject and activity.
 
-This tidy data is then written into the file .\data\merged\tidyData.txt using write.table.
+This tidy data is then written into the file .\data\merged\tidyData.txt using write.table and .\data\merged\tidyData.csv using write.csv.
 
 
 
