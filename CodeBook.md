@@ -8,7 +8,9 @@ The code in run_analysis.R also contains plenty of comments.
 ## Project part 1
 
 subjectMerged - A 10299 x 1 data frame obtained by row binding the data from subject_train.txt and subject_test.txt. This contains the subject identifier as a numeric of the experiment.
+
 yMerged - A 10299 x 1 data frame obtained by row binding the data from y_train.txt and y_test.txt. This contains the activity class as a numeric.
+
 XMerged - A 10299 x 561 data frame obtained by row binding the data from X_train.txt and X_test.txt
 oneDataSet - A 10299 x 563 data frame obtained by column binding subjectMerged, yMerged and XMerged.
 
