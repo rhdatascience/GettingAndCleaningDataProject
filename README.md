@@ -32,12 +32,12 @@ My script does following.
 3. Replace the activities in the one data set with names taken from activity_labels.txt.
 
 4. Rename the variable names of the measurements. I am doing the following transformations.
-
+	
 	* Remove "-", "()" and duplicate "Body".
 	* Replace starting 't' with Time and 'f' with Frequency.
 	* Replace Mag with Magnitude, std with StandardDeviation, mean with Mean, Acc with Acceleration, Gyro with Gyroscope.
 	* Replace the ending 'X', 'Y', 'Z' with 'Xaxes', 'Yaxes', 'Zaxes'
-
+	
 5. Use the data set from step 4 and calculate the average of each variable for each activity and each subject.
 
 The CodeBook will give more info about how I am cleaning the data.
