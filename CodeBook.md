@@ -28,7 +28,7 @@ oneDataSetEx - A 10299 x 68 data frame. The is the same data frame as oneDataSet
 
 ## Part 3
 
-activity_labels - A 6 x 2 data frame obtained by reading activity_labels.
+activity_labels - A 6 x 2 data frame obtained by reading activity_labels.txt.
 
 yMergedWithActivityLabels - A 10299 x 2 data frame obtained by joining the merged activities (yMerged) with the activity_labels by the first column. The second column in yMergedWithActivityLabels contains the name of the activity. (i.e LAYING, WALKING, ...)
 
@@ -36,11 +36,7 @@ oneDataSetExWithActivity - A 10299 x 68 data frame. Same data frame as oneDataSe
 
 ## Part 4
 
-descVariableNames <- A list of the 561 feature names from the variable features. I am using this to give descriptive names to these variables. I am doing the following transformations.
-* Remove "-", "()" and duplicate "Body".
-* Replace starting 't' with Time and 'f' with Frequency.
-* Replace Mag with Magnitude, std with StandardDeviation, mean with Mean, Acc with Acceleration, Gyro with Gyroscope.
-* Replace the ending 'X', 'Y', 'Z' with 'Xaxes', 'Yaxes', 'Zaxes'
+descVariableNames <- A list of the 561 feature names from the variable features. I am using this to give descriptive names to these variables. 
 
 tidyOneDataSet - A 10299 x 68 data frame. Same as oneDataSetExWithActivity but it has now descriptive column names from descVariableNames subsetted with the 66-length vector featInd + "Subject" and "Activity" for the first 2 columns.
 
@@ -49,9 +45,10 @@ tidyOneDataSet - A 10299 x 68 data frame. Same as oneDataSetExWithActivity but i
 secondDataSet - A 10299 x 68 data frame. This is the same one as tidyOneDataSet. My interpretation here is that all the work the extract the mean and std variables, give descriptive names to variables should be used for the tidy data in part 5 as well.
 
 tidy - A 180 x 68 data frame containing the average of each variable for each activity and each subject. These values where obtained by using the aggregate function from reshape2 on the Activity and Subject variables.
-* Column 1 has the subject.
-* Column 2 has the activity.
-* Columns 3:68 contain the average of all the value for the corresponding subject and activity.
+* Column 1 has the subject. This is an integer value from 1 to 30.
+* Column 2 has the activity. This is a factor with 6 possible values: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING and LAYING.
+
+* Columns 3:68 contain the average of all the value for the corresponding subject and activity. These are numeric values.
 
 This tidy data is then written into the file .\data\merged\tidyData.txt using write.table and .\data\merged\tidyData.csv using write.csv.
 
