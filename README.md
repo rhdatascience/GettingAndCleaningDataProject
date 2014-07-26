@@ -21,5 +21,22 @@ run_analysis.R contains one function called run_analysis() and returns the tidy 
 
 If you want to look at the other variables from the script, you can simply copy the content of the function and run it in RStudio.
 
-## More info
-The CodeBook will give more info about how I am clening the data.
+## Explanation of the script
+
+My script does following. 
+
+* Reads the data for subject (subject are people), X (X are measurements) and y (y are activities) from the train and test folders, row combines them and then columns combines them into one dataset.
+
+* Read the feature names from features.txt and only selects the features containing "mean()" and "std()". Only these features will be extracted from the one dataset above.
+
+* Replace the activities in the one data set with names taken from activity_labels.txt.
+
+* Rename the variable names of the measurements. I am doing the following transformations.
+** Remove "-", "()" and duplicate "Body".
+** Replace starting 't' with Time and 'f' with Frequency.
+** Replace Mag with Magnitude, std with StandardDeviation, mean with Mean, Acc with Acceleration, Gyro with Gyroscope.
+** Replace the ending 'X', 'Y', 'Z' with 'Xaxes', 'Yaxes', 'Zaxes'
+
+* Use the data set from the previous step and calculate the average of each variable for each activity and each subject.
+
+The CodeBook will give more info about how I am cleaning the data.
