@@ -26,18 +26,14 @@ If you want to look at the other variables from the script, you can simply copy 
 My script does following. 
 
 1. Reads the data for subject (subject are people), X (X are measurements) and y (y are activities) from the train and test folders, row combines them and then columns combines them into one dataset.
-
 2. Read the feature names from features.txt and only selects the features containing "mean()" and "std()". Only these features will be extracted from the one dataset above.
-
 3. Replace the activities in the one data set with names taken from activity_labels.txt.
-
 4. Rename the variable names of the measurements. I am doing the following transformations.
 	
 	* Remove "-", "()" and duplicate "Body".
 	* Replace starting 't' with Time and 'f' with Frequency.
 	* Replace Mag with Magnitude, std with StandardDeviation, mean with Mean, Acc with Acceleration, Gyro with Gyroscope.
 	* Replace the ending 'X', 'Y', 'Z' with 'Xaxes', 'Yaxes', 'Zaxes'
-	
 5. Use the data set from step 4 and calculate the average of each variable for each activity and each subject.
 
 The CodeBook will give more info about how I am cleaning the data.
