@@ -37,16 +37,6 @@ run_analysis <- function()
         
         features <- read.table(".\\data\\features.txt")
         
-        # 1st solution, only return the features that have only mean and std as a whole word them. (no such thing as meanFreq for example)
-        
-        #nonMeanFreq <- grep("meanFreq", features[,2], invert = TRUE)                
-        #mean <- grep("mean", features[,2], fixed = TRUE) # This includes meanFreq as well.
-        
-        # Filter out meanFeq from mean.
-        # These are the index for the columns that have name *mean()*.
-        # Is does NOT contain the ones that have the name meanFreq in them, it does not include the values for 
-        #meanFeatures <- mean[mean %in% nonMeanFreq]
-        
         # Filter all feature with mean and std in their name.
         # According to the features_info file, the mean and standard deviation are specified as follow:
         #  mean(): Mean value
@@ -117,7 +107,7 @@ run_analysis <- function()
         
         tidyData <- ".\\data\\merged\\tidyData.txt"
         
-        # I am going to save the merged data into some files.
+        # I am going to save the tidy data to a txt and csv file.
         if(!file.exists("data\\merged")){ dir.create("data\\merged") }
         write.table(tidy, ".\\data\\merged\\tidyData.txt")
         write.csv(tidy, ".\\data\\merged\\tidyData.csv")
